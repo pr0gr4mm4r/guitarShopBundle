@@ -18,7 +18,7 @@ services:
     volumes:
     -  /src/main/resources/guitarshop/currentGuitarshopData:/var/lib/mysql
     environment:
-      - MYSQL_ROOT_PASSWORD=Abraham1203
+      - MYSQL_ROOT_PASSWORD=mypassword
       - MYSQL_DATABASE=guitarshop
     networks:
       - backend
