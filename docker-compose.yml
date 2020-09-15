@@ -10,13 +10,14 @@ services:
     networks:
       - backend
       - frontend
-    depends_on:
+    depends_on: 
       - db
     restart: on-failure
   db:
     image: mysql:8.0.17
     volumes:
-    -  /src/main/resources/guitarshop/currentGuitarshopData:/var/lib/mysql
+    - ./src/main/resources/guitarShopData/initialGuitarShopData:/docker-entrypoint-initdb.d
+    - ./src/main/resources/guitarShopData/currentGuitarShopData:/var/lib/mysql
     environment:
       - MYSQL_ROOT_PASSWORD=mypassword
       - MYSQL_DATABASE=guitarshop
