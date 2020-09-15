@@ -1,0 +1,61 @@
+.emailHint {
+  border: 1px solid red;
+}
+
+.nameHint {
+  border: 1px solid red;
+}
+
+.passwordHint {
+  border: 1px solid red;
+}
+
+.countryHint {
+  border: 1px solid red;
+}
+
+.postalCodeHint {
+  border: 1px solid red;
+}
+
+.streetNameHint {
+  border: 1px solid red;
+}
+
+.streetNumberHint {
+  border: 1px solid red;
+}
+
+#logo {
+  width: 40px;
+  height: auto;
+}
+
+#navHeading {
+  font-size: 150%;
+  color: black;
+  margin-left: 1.5%;
+  margin-right: 4%;
+}
+
+.registerMargin {
+  margin-left: 7%;
+  margin-top: 5%;
+}
+
+.navbar {
+  background-color: #bdf0f5;
+}
+
+.nav-link {
+  color: black;
+}
+
+.matFormWrapper{
+  margin-left: 7%;
+}
+
+div.matFormWrapper div{
+  display: inline-block;
+  margin-right: 4%;
+}

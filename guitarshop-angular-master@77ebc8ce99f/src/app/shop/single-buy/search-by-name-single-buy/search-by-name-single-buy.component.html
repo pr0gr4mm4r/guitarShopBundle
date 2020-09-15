@@ -1,0 +1,74 @@
+<app-navbar></app-navbar>
+<div style="text-align: center">
+  <h1><b>search a product by name and add it to shopping cart:</b></h1>
+  <br><br>
+  <label for="searchProduct">product name:&nbsp;&nbsp;</label>
+  <mat-form-field><input placeholder="enter product to search" matInput [(ngModel)]="productName" id="searchProduct" type="text"></mat-form-field>
+  <br><br>
+  <button id="addShoppingCartButton" type="button" class="btn btn-outline-info" (click)="openConfirmation()">add to
+    shopping cart
+  </button>
+  <ng-container *ngIf="product.currentDescription">
+    <div>
+      {{product.currentName}}
+      {{product.currentPrice + "€"}}
+      {{product.category}}
+      {{product.currentDescription}}
+      <div *ngIf="product.category !== 'guitar_neck'; else elseBlock">
+        <img
+          onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/5/59/Empty.png'" height="250" width="320"
+          [src]="product.currentImage">
+      </div>
+      <ng-template #elseBlock>
+        <img
+          onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/5/59/Empty.png'" height="100" width="320"
+          [src]="product.currentImage">
+      </ng-template>
+    </div>
+  </ng-container>
+</div>
+<div class="modal" id="exampleModalCenter" tabindex="-1" role="dialog"
+     aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">confirmation</h5>
+        <button type="button" (click)="resetVariables()" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body"><p>
+        How many products do you want to add to your shopping cart?
+      </p><br>
+        {{quantityMessage}}
+        <ng-container *ngIf="product">
+          <div *ngIf="product.category !== 'guitar_neck'; else elseBlock">
+            {{product.currentName}}
+            {{product.currentPrice + "€"}}
+            <img
+              onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/5/59/Empty.png'" height="250"
+              width="320"
+              [src]="product.currentImage">
+          </div>
+          <ng-template #elseBlock>
+            {{product.currentName}}
+            {{product.currentPrice + "€"}}
+            <img
+              onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/5/59/Empty.png'" height="100"
+              width="320"
+              [src]="product.currentImage">
+          </ng-template>
+          <br><br>
+          <input id="productQuantityInput" (input)="messageDecision()" type="number" value=1
+                 [(ngModel)]="productQuantity" [max]="product.storageQuantity" min=1>
+        </ng-container>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="resetVariables()">Cancel
+          </button>
+          <button type="button" class="btn btn-outline-info" [disabled]="disableAddShoppingCartButton" (click)="addToShoppingCart(product)">add to shopping cart
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

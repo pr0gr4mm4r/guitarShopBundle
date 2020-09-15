@@ -1,0 +1,68 @@
+<app-navbar></app-navbar>
+<div class="wrapper">
+
+    <div class="col-md-12">
+      <h1>insert product</h1>
+    </div>
+<br><br><br>
+
+    <div class="col-md-12 pointerClass">
+      <input type="file" (change)="onFileChanged($event)">
+    </div>
+
+<div class="container row">
+  <div class="col-md-12">
+    <div *ngIf=message>{{message}}</div>
+  </div>
+</div>
+
+<div class="formMargin">
+  <div>
+    <mat-form-field><input matInput autocomplete="off"
+                           id="formCategory" [(ngModel)]="product.category"
+                           name="formCategory" type="text" placeholder="select category" [formControl]="myControl"
+                           [matAutocomplete]="auto">
+      <mat-autocomplete #auto="matAutocomplete">
+        <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+          {{option}}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field>
+      <input matInput autocomplete="off" id="formPrice" [(ngModel)]="product.currentPrice"
+             name="formPrice" type="number" placeholder="select initial price">
+    </mat-form-field>
+  </div>
+  <br><br>
+
+  <div>
+    <mat-form-field>
+      <input matInput autocomplete="off" id="formDescription" [(ngModel)]="product.currentDescription"
+             name="formDescription" type="text" placeholder="select initial description">
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field>
+      <input matInput id="formStorageQuantity"
+             [(ngModel)]="product.storageQuantity"
+             name="formStorageQuantity" type="number" placeholder="select initial storage quantity">
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field>
+      <input matInput id="formName"
+             [(ngModel)]="product.currentName"
+             name="formName" type="text" placeholder="select initial name">
+    </mat-form-field>
+  </div>
+  <br><br>
+  <div class="col-md-6">
+    <input type="button" class="btn btn-outline-info" data-toggle="tooltip"
+           title="try to add a product with above entered information" (click)="onUpload()" value="add product">
+  </div>
+</div>
+</div>
+
+

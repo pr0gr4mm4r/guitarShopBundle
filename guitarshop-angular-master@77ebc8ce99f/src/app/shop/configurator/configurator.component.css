@@ -1,0 +1,139 @@
+h1 {
+  text-align: center;
+  margin: 40px;
+  font-size: 50px;
+}
+
+#roundWrapper > div{
+  border-radius: 75%;
+}
+
+#roundWrapper > div > div{
+  border-radius: 75%;
+}
+
+#roundWrapper > div > div > div{
+  border-radius: 75%;
+}
+
+p {
+  font-size: 30px;
+  margin-left: 40px;
+}
+
+span {
+  font-size: 30px;
+  margin-left: 40px;
+}
+
+#addToShoppingCartButton {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 380px;
+  padding-right: 380px;
+  font-size: 30px;
+}
+
+.selected {
+  background-color: #ff9a26 !important;
+}
+
+.heightInnerBodyStrings {
+  height: 285px;
+}
+
+.heightInnerNeck {
+  height: 100px;
+}
+
+.styleInnerBoxes {
+  display: inline-block;
+  background-color: #205f78;
+  margin: 50px;
+  width: 320px;
+  cursor: pointer;
+}
+
+.styleInnerBoxes:hover {
+  background-color: #ffa238;
+}
+
+.neckDecreaseWrapper {
+  display: inline-block;
+  background-color: #205f78;
+  margin-left: 50px;
+  width: 60px;
+  height: 100px;
+  cursor: pointer;
+  border: 3px solid #205f78;
+}
+
+.neckDecreaseWrapper:hover{
+  border-color: #ffa238;
+}
+
+.bodyStringsIncreaseWrapper:hover {
+  border-color: #ffa238;
+}
+
+.bodyStringsDecreaseWrapper {
+  display: inline-block;
+  background-color: #205f78;
+  margin-left: 50px;
+  width: 60px;
+  height: 285px;
+  cursor: pointer;
+  border: 3px solid #205f78;
+}
+
+.bodyStringsDecreaseWrapper:hover{
+  border-color: #ffa238;
+}
+
+.bodyIncreaseWrapper:hover {
+  border-color: #ffa238;
+}
+
+.neckIncreaseWrapper {
+  display: inline-block;
+  background-color: #205f78;
+  width: 60px;
+  height: 100px;
+  cursor: pointer;
+  border: 3px solid #205f78;
+}
+
+.neckIncreaseWrapper:hover {
+  border-color: #ffa238;
+}
+
+.bodyStringsIncreaseWrapper {
+  display: inline-block;
+  background-color: #205f78;
+  width: 60px;
+  height: 285px;
+  cursor: pointer;
+  border: 3px solid #205f78;
+}
+
+.productPriceWrapper {
+  float: left;
+  font-size: 180%;
+  border: 3px solid #f0ffff;
+}
+
+.productPriceWrapper:hover {
+  background-color: #ffa238;
+  border-radius: 20%;
+  margin: 10px;
+}
+
+.productNameWrapper:hover {
+  background-color: #ffa238;
+  border-radius: 20%;
+  margin: 10px;
+}
+
+input:invalid {
+  border-color: red;
+}

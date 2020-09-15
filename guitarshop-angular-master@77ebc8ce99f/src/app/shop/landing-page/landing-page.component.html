@@ -1,0 +1,25 @@
+<app-navbar></app-navbar>
+<div class="wrapper">
+  <div>
+    <iframe width="580" height="350" src="https://www.youtube.com/embed/rH2ufnjatYY" frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+  <div *ngIf="english">
+    <br><br>
+    <p>Hello User, I am glad that you found your way to this guitar webshop.</p>
+    <p>Although there is still a lot to do some of the core features of this shop do already work.</p>
+    <br>
+    <p>UserFunctionality:
+      registry/ login, guitar-configurator, searching single products and add them to shopping cart.</p>
+    <p>AdminFunctionality: login, adding products</p>
+    <br>
+    <p>You can reach everything making use of the navigation bar.</p>
+    <br>
+    <p>If you click on the <img id="logo" src="../assets/logoGuitar.png"> logo in the top left corner you will be
+      redirected to this landing page.</p>
+    <br>
+    <p>And now: have FUN and let's ROCK.</p>
+  </div>
+  <div *ngIf="!english">
+  </div>
+</div>

@@ -1,0 +1,11 @@
+h1{
+  font-weight: bold;
+}
+body{
+  text-align: center;
+}
+
+.wrapper{
+  text-align: center;
+  margin: 50px;
+}

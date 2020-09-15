@@ -1,0 +1,99 @@
+<nav class="navbar navbar-expand-md">
+  <div class="logoMargin">
+    <span class="navbar-brand">
+      <img routerLink="/landingPage" data-toggle="tooltip" title="redirect to landing page"
+           id="logo" src="../assets/logoGuitar.png">
+    </span>
+  </div>
+  <span id="navHeading" class="navbar-text" data-toggle="tooltip">
+    <b>guitar web shop</b>
+  </span>
+  <ul class="navbar-nav ml-auto">
+    <li *ngIf="isUser" id="shoppingCartMargin" class="nav-item dropdown">
+      <a class="nav-link navbarColor" routerLink="/shoppingCart" id="shoppingCart" role="button"
+         data-toggle="tooltip"
+         title="forward to shoppingCart page" aria-haspopup="true"
+         aria-expanded="false">
+        shopping cart
+      </a>
+    </li>
+    <li *ngIf="isAdmin" class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle navbarColor" id="navbarBookAdministry" role="button" data-toggle="dropdown"
+         data-toggle2="tooltip" title="manipulate products" aria-haspopup="true" aria-expanded="false">
+        products administry
+      </a>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+        <a class="dropdown-item" routerLink="/addProduct" data-toggle="tooltip"
+           title="add a product via form submit">add products</a>
+        <a class="dropdown-item" routerLink="/updateProduct" data-toggle="tooltip"
+           title="update a product via form submit">update products</a>
+        <a class="dropdown-item" routerLink="/deleteProduct" data-toggle="tooltip"
+           title="delete a product via form submit">
+          delete products
+        </a>
+      </div>
+    </li>
+
+    <li *ngIf="!isAdmin" id="configuratorList" class="nav-item dropdown">
+      <a class="nav-link navbarColor" routerLink="/configurator" id="configurator" role="button" data-toggle="tooltip"
+         title="redirect to configurator" aria-haspopup="true"
+         aria-expanded="false">
+        configurator
+      </a>
+    </li>
+
+    <li *ngIf="!isAdmin" class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle navbarColor" id="buySingle" role="button" data-toggle="dropdown"
+         data-toggle2="tooltip" title="redirect to page where you can order single pieces" aria-haspopup="true"
+         aria-expanded="false">
+        order single pieces
+      </a>
+      <div class="dropdown-menu" aria-labelledby="navbarBooksOverview">
+        <a class="dropdown-item" routerLink="/searchByNameSingleBuy" data-toggle="tooltip"
+           title="">name search</a>
+        <a class="dropdown-item" routerLink="/tableOverviewSingleBuy" data-toggle="tooltip"
+           title="">table overview</a>
+      </div>
+    </li>
+
+    <li *ngIf="isAdmin" class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle navbarColor" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
+         data-toggle2="tooltip" title="get product overview" aria-haspopup="true" aria-expanded="false">
+        product overview
+      </a>
+      <div class="dropdown-menu" aria-labelledby="navbarBooksOverview">
+        <a class="dropdown-item" routerLink="/" data-toggle="tooltip"
+           title="shows products sorted by productName">sort by productName</a>
+        <a class="dropdown-item" routerLink="/" data-toggle="tooltip"
+           title="shows products sorted by productPrice">sort by productPrice</a>
+        <a class="dropdown-item" routerLink="/" data-toggle="tooltip"
+           title="shows products sorted by productCategory">sort by productCategory</a>
+      </div>
+    </li>
+
+    <li *ngIf="!isAdmin && !isUser" id="registerMargin" class="nav-item dropdown">
+      <a class="nav-link navbarColor" routerLink="/register" id="register" role="button" data-toggle="tooltip"
+         title="redirect to register page" aria-haspopup="true"
+         aria-expanded="false">
+        register
+      </a>
+    </li>
+
+    <li *ngIf="!isAdmin && !isUser" id="loginMargin" class="nav-item dropdown">
+      <a class="nav-link navbarColor" routerLink="/login" id="login" role="button" data-toggle="tooltip"
+         title="redirect to login page" aria-haspopup="true"
+         aria-expanded="false">
+        login
+      </a>
+    </li>
+
+    <li *ngIf="isUser || isAdmin" id="logoutMargin" class="nav-item dropdown">
+      <a class="nav-link navbarColor" routerLink="/login" (click)="logout()" id="Logout" role="button"
+         data-toggle="tooltip"
+         title="instant logout and redirect to login" aria-haspopup="true"
+         aria-expanded="false">
+        logout
+      </a>
+    </li>
+  </ul>
+</nav>

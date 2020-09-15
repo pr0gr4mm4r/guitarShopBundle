@@ -1,0 +1,31 @@
+<app-navbar></app-navbar>
+    <div class="loginMargin">
+      <form>
+        <div class="matFormWrapper">
+        <div>
+          <label for="email">email:&nbsp;</label>
+          <mat-form-field>
+          <input matInput type="text" id="email" [ngClass]="{'loginFail':loginFail}"
+                 [(ngModel)]="email" name="email" placeholder="Enter Email">
+            </mat-form-field>
+          <label for="email" *ngIf="loginFail">&nbsp;&nbsp;&nbsp;Ungültige Logindaten</label>
+        </div>
+        <br>
+        <div>
+          <label for="password">password:&nbsp;</label>
+          <i class="fas fa-lock prefix"></i>
+          <mat-form-field>
+          <input matInput type="password" id="password" [ngClass]="{'loginFail':loginFail}"
+                 [(ngModel)]="password" name="password" placeholder="Enter password">
+          </mat-form-field>
+        </div>
+        <br>
+        <button [disabled]="!email || !password" type="button" class="btn btn-outline-info"  data-toggle="tooltip" title="try to log in" (click)=handleLogin()>login</button>
+        </div>
+      </form>
+      <br>
+    </div>
+
+
+
+

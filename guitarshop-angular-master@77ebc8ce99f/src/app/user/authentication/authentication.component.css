@@ -1,0 +1,16 @@
+.loginMargin{
+  margin-left: 7%;
+  margin-top: 5%;
+}
+
+.matFormWrapper{
+  margin: 7%;
+}
+
+div.matFormWrapper div{
+  display: inline-block;
+  margin-right: 4%;
+}
+
+
+

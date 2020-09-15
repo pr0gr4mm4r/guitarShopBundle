@@ -1,0 +1,23 @@
+tbody{
+  cursor: pointer;
+}
+td:hover{
+  background-color: #ff9a26;
+  font-weight: bold;
+}
+.clickable{
+  cursor: pointer;
+  background-color: #bdf0f5;
+}
+.clickable:hover{
+  background-color: #ff9a26;
+  font-weight: bold;
+}
+input:invalid{
+  border-color: red;
+}
+h1 {
+  text-align: center;
+  margin: 40px;
+  font-size: 50px;
+}

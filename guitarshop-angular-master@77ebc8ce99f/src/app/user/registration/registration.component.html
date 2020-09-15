@@ -1,0 +1,91 @@
+<app-navbar></app-navbar>
+<div class="registerMargin">
+  <div>
+    <div>
+      <form>
+        <div class="matFormWrapper">
+          <div>
+            <label for="email">email:&nbsp;</label>
+            <mat-form-field>
+              <input matInput type="text" id="email" [ngClass]="{'emailHint':emailHint}"
+                     [(ngModel)]="user.email" name="email" placeholder="enter email">
+            </mat-form-field>
+            <label for="name" *ngIf="emailHint">&nbsp;&nbsp;&nbsp;this email is already assigned</label>
+          </div>
+          <br>
+          <div>
+            <label for="name">user name:&nbsp;</label>
+            <mat-form-field>
+              <input matInput type="text" id="name" [ngClass]="{'nameHint':nameHint}"
+                     [(ngModel)]="user.name" name="name" placeholder="enter name">
+            </mat-form-field>
+            <label for="name" *ngIf="nameHint">&nbsp;&nbsp;&nbsp;this user name is already assigned</label>
+          </div>
+          <br>
+          <div>
+            <label for="password">password:&nbsp;</label>
+            <mat-form-field>
+              <input matInput type="password" id="password" [ngClass]="{'passwordHint':passwordHint}"
+                     [(ngModel)]="user.password" name="password" placeholder="enter password">
+            </mat-form-field>
+            <label for="name" *ngIf="passwordHint">&nbsp;&nbsp;&nbsp;passwords do not match</label>
+          </div>
+          <br>
+          <div>
+            <label for="confirmPassword">confirm password:&nbsp;</label>
+            <mat-form-field>
+              <input matInput type="password" id="confirmPassword" [ngClass]="{'passwordHint':passwordHint}"
+                     [(ngModel)]="confirmPassword" name="confirmPassword" placeholder="confirm password">
+            </mat-form-field>
+          </div>
+          <br>
+          <div>
+            <label for="city">city:&nbsp;</label>
+            <mat-form-field>
+              <input matInput type="text" id="city"
+                     [(ngModel)]="address.city" name="city" placeholder="enter city">
+            </mat-form-field>
+          </div>
+          <br>
+          <div>
+            <label for="postalCode">postal code:&nbsp;</label>
+            <mat-form-field>
+              <input matInput type="number" id="postalCode"
+                     [(ngModel)]="address.postalCode" name="postalCode" placeholder="enter postal code">
+            </mat-form-field>
+          </div>
+          <br>
+          <div>
+            <label for="country">country:&nbsp;</label>
+            <mat-form-field>
+              <input matInput type="text" id="country"
+                     [(ngModel)]="address.country" name="country" placeholder="enter country">
+            </mat-form-field>
+          </div>
+          <br>
+          <div>
+            <label for="streetName">street name:&nbsp;</label>
+            <mat-form-field>
+              <input matInput type="text" id="streetName"
+                     [(ngModel)]="address.streetName" name="email" placeholder="enter street name">
+            </mat-form-field>
+          </div>
+          <br>
+          <div>
+            <label for="streetNumber">street number:&nbsp;</label>
+            <mat-form-field>
+              <input matInput type="number" id="streetNumber"
+                     [(ngModel)]="address.streetNumber" name="streetNumber" placeholder="enter street number">
+            </mat-form-field>
+          </div>
+          <br>
+        </div>
+      </form>
+      <button class="btn btn-outline-info matFormWrapper" data-toggle="tooltip"
+              title="try to register" (click)=registerPreparation()
+              [disabled]="!user.email || !user.name || !user.password || !confirmPassword || !address.country || !address.city || !address.postalCode ||  !address.streetName || !address.streetNumber">
+        register
+      </button>
+    </div>
+  </div>
+</div>

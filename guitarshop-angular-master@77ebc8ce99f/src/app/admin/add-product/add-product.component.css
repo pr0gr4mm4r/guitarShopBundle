@@ -1,0 +1,18 @@
+.wrapper{
+  text-align: center;
+  margin: 50px;
+}
+
+.formMargin {
+  margin-left: 7%;
+  margin-top: 5%;
+}
+
+div.formMargin div{
+  display: inline-block;
+  margin-right: 4%;
+}
+
+h1{
+  font-weight: bold;
+}
